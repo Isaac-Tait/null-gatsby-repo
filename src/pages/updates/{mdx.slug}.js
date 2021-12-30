@@ -53,6 +53,8 @@ const BlogPostPage = ({ data, pageContext, location }) => {
       )
 }
 
+export default BlogPostPage
+
 export const query = graphql`
 query ($slug: String) {
   mdx(fields: { slug: { eq: $slug } }) {
@@ -65,4 +67,18 @@ query ($slug: String) {
 }
 `
 
-export default BlogPostPage
+// Query to render blog post but then pagination does not work
+// eslint-disable-next-line no-lone-blocks
+{/* 
+export const query = graphql`
+query ($id: String) {
+  mdx(id: {eq: $id}) {
+    frontmatter {
+      title
+    }
+    body
+    id
+    slug
+  }
+}
+`*/}
