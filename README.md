@@ -1,3 +1,7 @@
-*** Royal Ridges Retreat
+*** Unhandled Run Time error: **Cannot read properties of null (reading 'frontmatter')
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f65f5691-c8ce-4f0a-925e-f8fef1a8dc77/deploy-status)](https://app.netlify.com/sites/heuristic-benz-9e0013/deploys)
+At src -> pages --> updates you will find `{mdx.slug}.js` if you comment out line 13 the error goes away.
+
+Line 13 reads `if(!post) return <pre>{JSON.stringify(pageContext,null,2)}</pre>`
+
+For some reason my query, which runs fine in GraphiQL returns null when I run `gatsby build`. `gatsby-develop` works okay until I attempt to visit the updates page (aka my blog page)... 
