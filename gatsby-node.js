@@ -43,7 +43,6 @@ exports.createPages = async ({ graphql, actions }) => {
       // create prev and next on each posts render (for Blog Post Pagination, BPP)
       const previous = index === 0 ? null : posts[index - 1].node.id
       const next = index === posts.length - 1 ? null : posts[index + 1].node.id
-      console.log(previous, next)
       // previous and next are objects props sent as pageContext object to blogPostTemplate
       createPage({
         path: `/updates${post.node.fields.slug}`,
